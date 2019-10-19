@@ -54,7 +54,7 @@ class TwythonStreamerTypesStatuses(object):
         self.streamer = streamer
         self.params = None
 
-    def filter(self, **params):
+    def filter(**params):
         """Stream statuses/filter
 
         :param \*\*params: Parameters to send with your stream request
@@ -64,7 +64,7 @@ class TwythonStreamerTypesStatuses(object):
         """
         url = 'https://stream.twitter.com/%s/statuses/filter.json' \
               % self.streamer.api_version
-        self.streamer._request(url, 'POST', params=params)
+        streamer._request(url, 'POST', params=params)
 
     def sample(self, **params):
         """Stream statuses/sample
