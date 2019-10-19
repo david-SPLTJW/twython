@@ -15,7 +15,7 @@ def _transparent_params(_params):
     params = {}
     files = {}
     for k, v in _params.items():
-        if hasattr(v, 'read') and callable(v.read):
+        if (hasattr(v, 'read') and callable(v.read)) or ("media" in _params):
             files[k] = v  # pragma: no cover
         elif isinstance(v, bool):
             if v:
