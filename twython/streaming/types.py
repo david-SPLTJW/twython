@@ -63,7 +63,7 @@ class TwythonStreamerTypesStatuses(object):
         """
         url = 'https://stream.twitter.com/%s/statuses/filter.json' \
               % self.streamer.api_version
-        self.streamer._request(url, 'POST', params=track)
+        self.streamer._request(url, 'POST', params={"track":track})
         
     def filter_async(self,**params):
         """Stream statuses/filter asynchronously
