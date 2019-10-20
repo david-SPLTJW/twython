@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from threading import Thread
+
 """
 twython.streaming.types
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,6 +73,7 @@ class TwythonStreamerTypesStatuses(object):
         Accepted params found at:
         https://developer.twitter.com/en/docs/tweets/filter-realtime/api-reference/post-statuses-filter
         """
+        print(params["track"])
         self.s_thread = Thread(target=self._filter,args=[params["track"]]).start()
         
     def filter(self,**params):
