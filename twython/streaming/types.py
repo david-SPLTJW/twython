@@ -56,7 +56,7 @@ class TwythonStreamerTypesStatuses(object):
         self.streamer = streamer
         self.params = None
         
-    def _filter(track):
+    def _filter(self,track):
         """Stream statuses/_filter
 
         :track \*\*params: Filter
